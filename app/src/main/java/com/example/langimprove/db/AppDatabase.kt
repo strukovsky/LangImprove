@@ -39,10 +39,23 @@ abstract class AppDatabase: RoomDatabase() {
             return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
                 .addCallback(object: RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
-                        super.onCreate(db)
-                            //  db.execSQL("INSERT INTO")
-                    }
-                }).build()
+                        db.execSQL("DELETE FROM texts")
+                        db.execSQL("DELETE FROM paragraphs")
+                        db.execSQL("INSERT INTO texts VALUES(0)")
+                        db.execSQL("INSERT INTO paragraphs VALUES(0, 0, 0, 'ru', 'Привет, я Миша')")
+                        db.execSQL("INSERT INTO paragraphs VALUES(1, 0, 1, 'fr', 'Je suis leleve ')")
+                        db.execSQL("INSERT INTO questions VALUES(0, 0, 'ru',  'Как зовут главного героя?', 'c')")
+                        db.execSQL("INSERT INTO questions VALUES(1, 0, 'ru',  'Кто он?', 'b')")
+                        db.execSQL("INSERT INTO answers VALUES(0, 0, 'a', 'ru', 'Виктор')")
+                        db.execSQL("INSERT INTO answers VALUES(1, 0, 'b', 'ru', 'Боря')")
+                        db.execSQL("INSERT INTO answers VALUES(2, 0, 'c', 'ru', 'Миша')")
+                        db.execSQL("INSERT INTO answers VALUES(3, 1, 'a', 'ru', 'Повар')")
+                        db.execSQL("INSERT INTO answers VALUES(4, 1, 'b', 'ru', 'Ученик')")
+                        db.execSQL("INSERT INTO answers VALUES(5, 1, 'c', 'ru', 'Программист')")
+
+
+                    }}).build()
+
         }
 
     }

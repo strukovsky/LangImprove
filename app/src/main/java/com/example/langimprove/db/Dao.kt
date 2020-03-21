@@ -2,12 +2,15 @@ package com.example.langimprove.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
 
 @Dao
 interface TextDao{
-    @Query("SELECT * FROM texts")
-    fun getText(): LiveData<List<Paragraph>>
+    @Insert
+    fun insert(t: Text)
+
+
 
 
 }
@@ -18,12 +21,20 @@ interface ParagraphDao{
     @Query("SELECT * FROM paragraphs WHERE text_id=:text_id and lang=:lang and position=:position")
     fun getParagraphs(text_id: Int, lang: String, position: Int) : Paragraph
 
+    @Query("SELECT * FROM paragraphs")
+    fun getAll(): List<Paragraph>
+
+    @Insert
+    fun insert(p: Paragraph)
 }
 
 @Dao
 interface TitleDao{
     @Query("SELECT * FROM titles WHERE text_id=:text_id and lang=:lang")
     fun getTitle(text_id: Int, lang: String): Title
+
+    @Query("SELECT * FROM titles WHERE lang=:lang")
+    fun getTitles(lang: String): List<Title>
 }
 
 @Dao

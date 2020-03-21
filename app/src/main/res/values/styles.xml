@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Container" parent="AppTheme">
+        <item name="android:colorBackground">@color/colorContainer</item>
+    </style>
+
+    <style name="AppTheme.Paragraph" parent="AppTheme">
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+        <item name="android:textSize">16pt</item>
+        <item name="android:colorBackground">@color/colorParagraph</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
 </resources>

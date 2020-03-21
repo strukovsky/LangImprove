@@ -27,6 +27,11 @@ data class Paragraph(
     val lang: String,
     val contents: String
 )
+{
+    override fun toString(): String {
+        return id.toString() + " " + textId.toString() + " " +  position.toString() + " " + lang.toString() + " " + contents
+    }
+}
 
 
 @Entity(
@@ -82,5 +87,7 @@ data class Answer(
 data class TestQuestion(
     val question: String,
     val correct: Char,
-    val answers: List<String>
+    val A: String,
+    val B: String,
+    val C: String
 )
