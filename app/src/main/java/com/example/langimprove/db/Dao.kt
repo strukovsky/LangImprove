@@ -38,5 +38,5 @@ interface AnswerDao{
     fun getAnswers(question_id: Int, lang: String): List<Answer>
 
     @Query("SELECT contents FROM answers WHERE question_id=:question_id and lang=:lang ORDER BY label")
-    fun getAnswersText(question_id: Int, lang: String): Array<String>
+    fun getAnswersText(question_id: Int, lang: String): List<String>
 }

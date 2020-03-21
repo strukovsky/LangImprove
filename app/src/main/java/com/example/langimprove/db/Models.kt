@@ -82,5 +82,5 @@ data class Answer(
 data class TestQuestion(
     val question: String,
     val correct: Char,
-    val answers: Array<String>
+    val answers: List<String>
 )
