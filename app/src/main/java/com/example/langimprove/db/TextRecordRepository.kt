@@ -35,7 +35,7 @@ class TextRecordRepository private constructor(
 
         // this fun is used in AsyncTasks, so it is here
         private fun getFormattedDate(time: Long) =
-            SimpleDateFormat("E dd M HH:00", Locale.getDefault()).format(Date(time))
+            SimpleDateFormat("E dd MMM", Locale.getDefault()).format(Date(time))
     }
 
 

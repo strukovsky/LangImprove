@@ -1,11 +1,14 @@
 package com.example.langimprove.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.langimprove.R
@@ -37,6 +40,14 @@ class TestQuestionAdapter internal constructor(context: Context) :
         holder.A.text = item.A
         holder.B.text = item.B
         holder.C.text = item.C
+        val correct = item.correct
+        holder.choice.setOnCheckedChangeListener { group, checkedId -> run{
+            val choice = if(checkedId == R.id.A) "a" else if(checkedId == R.id.B) "b" else "c"
+            Log.d("AZAZAZ", item.correct)
+            val message = if(choice == correct) "Yes!" else "No("
+            Toast.makeText(holder.itemView.context, message, Toast.LENGTH_SHORT).show()
+        } }
+
 
     }
 
@@ -45,6 +56,7 @@ class TestQuestionAdapter internal constructor(context: Context) :
         val B = itemView.findViewById<RadioButton>(R.id.B)
         val C = itemView.findViewById<RadioButton>(R.id.C)
         val question = itemView.findViewById<TextView>(R.id.question)
+        val choice = itemView.findViewById<RadioGroup>(R.id.choice)
     }
 
 

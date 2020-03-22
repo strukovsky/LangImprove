@@ -63,7 +63,7 @@ data class Question(
     val textId: Int,
     val lang: String,
     val contents: String,
-    val correct: Char
+    val correct: String
 )
 
 @Entity(
@@ -77,7 +77,7 @@ data class Answer(
 
     @ColumnInfo(name="question_id")
     val questionId: Int,
-    val label: Char,
+    val label: String,
     val lang: String,
     val contents: String
 
@@ -87,7 +87,7 @@ data class Answer(
 // Non-database object for tests. Test is an array of [TestQuestion]
 data class TestQuestion(
     val question: String,
-    val correct: Char,
+    val correct: String,
     val A: String,
     val B: String,
     val C: String

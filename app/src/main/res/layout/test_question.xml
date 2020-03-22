@@ -8,7 +8,7 @@
         android:id="@+id/question"
     />
 
-    <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/choice">
         <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/A"/>
         <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/B"/>
         <RadioButton android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/C"/>

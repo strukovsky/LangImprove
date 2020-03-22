@@ -17,13 +17,7 @@ class TestQuestionRepository private constructor(application: Application)
 
 
 
-     fun createTest(text_id: Int, lang: String): MutableLiveData<ArrayList<TestQuestion>>
-    {
-
-        return MutableLiveData<ArrayList<TestQuestion>>().also { it.value = AsyncCreateTest(text_id, lang).execute().get()}
-        
-    }
-
+     fun createTest(text_id: Int, lang: String) = AsyncCreateTest(text_id, lang).execute().get()
 
 
 

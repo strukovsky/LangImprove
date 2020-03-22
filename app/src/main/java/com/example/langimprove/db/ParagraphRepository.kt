@@ -41,8 +41,7 @@ class AsyncBuildText(val paragraphDao: ParagraphDao, val text_id: Int, val langs
         val list = ArrayList<Paragraph>()
 
         val all = paragraphDao.getAll()
-        for(item in all)
-            Log.d("AZAZ", all.toString())
+
 
         langs.withIndex().forEach { item ->
             run {

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.langimprove.R
 import com.example.langimprove.db.TextRecord
 
-class TextRecordAdapter: RecyclerView.Adapter<TextRecordAdapter.ViewHolder>() {
+class TextRecordAdapter public constructor(val choice: MutableLiveData<Int>): RecyclerView.Adapter<TextRecordAdapter.ViewHolder>() {
 
 
     val data = MutableLiveData<List<TextRecord>>();
@@ -38,6 +38,10 @@ class TextRecordAdapter: RecyclerView.Adapter<TextRecordAdapter.ViewHolder>() {
         val currentObject = data.value!![position]
         holder.title.text = currentObject.title
         holder.date.text = currentObject.time
+
+        holder.itemView.setOnClickListener {
+            choice.value = position
+        }
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

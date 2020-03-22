@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -14,9 +14,23 @@
 
     <style name="AppTheme.Paragraph" parent="AppTheme">
         <item name="android:fontFamily">sans-serif-condensed-light</item>
-        <item name="android:textSize">16pt</item>
+        <item name="android:textSize">20pt</item>
         <item name="android:colorBackground">@color/colorParagraph</item>
-        <item name="android:layout_margin">20dp</item>
+    </style>
+
+    <style name="AppTheme.Title" parent="AppTheme">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textSize">28pt</item>
+    </style>
+
+    <style name="AppTheme.Time" parent="AppTheme">
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+        <item name="android:textSize">16pt</item>
+    </style>
+
+    <style name="AppTheme.TextRecord" parent="AppTheme">
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+        <item name="android:textSize">28pt</item>
     </style>
 
 </resources>
