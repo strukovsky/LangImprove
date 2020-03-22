@@ -2,10 +2,9 @@ package com.example.langimprove.db
 
 import android.app.Application
 import android.os.AsyncTask
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-class TestRepository private constructor(application: Application)
+class TestQuestionRepository private constructor(application: Application)
 {
     private val questionDao: QuestionDao
     private val answerDao: AnswerDao
@@ -30,12 +29,12 @@ class TestRepository private constructor(application: Application)
 
     companion object
     {
-        @Volatile private var instance: TestRepository? = null
+        @Volatile private var instance: TestQuestionRepository? = null
 
         fun getInstance(application: Application) =
             instance ?: synchronized(this)
             {
-                instance ?: TestRepository(application).also { instance = it }
+                instance ?: TestQuestionRepository(application).also { instance = it }
             }
 
     }

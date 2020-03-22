@@ -14,12 +14,11 @@ class ParagraphRepository private constructor(
         paragraphDao = database.paragraphDao()
     }
 
-     fun buildText(text_id: Int, langs: Array<String>): MutableLiveData<List<Paragraph>> {
-        return MutableLiveData<List<Paragraph>>().also { it.value =
+     fun buildText(text_id: Int, langs: Array<String>) =
             AsyncBuildText(paragraphDao, text_id, langs).execute().get()
-        }
 
-    }
+
+
 
 
     companion object {

@@ -17,19 +17,19 @@ class ParagraphAdapter internal constructor(context: Context): RecyclerView.Adap
         return ParagraphViewHolder(view)
     }
 
-    var data: MutableLiveData<List<Paragraph>> = MutableLiveData()
+    var data = ArrayList<Paragraph>()
 
 
 
     override fun onBindViewHolder(holderParagraph: ParagraphAdapter.ParagraphViewHolder, position: Int) {
-        holderParagraph.paragraph.text = data.value?.get(position)?.contents ?: ""
+        holderParagraph.paragraph.text = data[position].contents ?: ""
     }
 
-    override fun getItemCount() = data.value!!.size
+    override fun getItemCount() = data.size
 
     public fun setData(other: List<Paragraph>)
     {
-        data.value = other
+        data = other as ArrayList<Paragraph>
         notifyDataSetChanged()
     }
 

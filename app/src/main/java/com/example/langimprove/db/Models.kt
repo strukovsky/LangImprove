@@ -8,7 +8,8 @@ import androidx.room.*
 )
 data class Text(
     @PrimaryKey(autoGenerate = true)
-    val id: Int
+    val id: Int,
+    val time: Long
 )
 
 
@@ -90,4 +91,12 @@ data class TestQuestion(
     val A: String,
     val B: String,
     val C: String
+)
+
+
+// Non-database object for Text record. It has only id, title(on certain language), identifier of language, and data stamp
+
+data class TextRecord(
+    val title: String,
+    val time: String
 )
